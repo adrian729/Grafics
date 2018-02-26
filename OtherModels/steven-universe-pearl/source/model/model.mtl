@@ -1,0 +1,31 @@
+newmtl initialShadingGroup
+illum 4
+Kd 0.60 0.99 0.93
+Ka 0.77 0.77 0.77
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.94 0.76 0.76
+Ka 0.57 0.57 0.57
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.96 0.60 0.96
+Ka 0.61 0.61 0.61
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl pearl_body:lambert1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.82 0.82 0.82
+Tf 1.00 1.00 1.00
+map_Kd pearl_body.jpg
+Ni 1.00
