@@ -21,27 +21,28 @@ void main() {
     vec4 cian = vec4(0, 1, 1, 1);
     vec4 blue = vec4(0, 0, 1, 1);
 
-    float y = scalator(vertex.y, boundingBoxMax.y, boundingBoxMin.y);
+    vec4 v = modelViewProjectionMatrix*vec4(vertex, 1.0);
+    float y = v.y / v.w;
 
-    float minSc = 0;
-    float maxSc = 0.25;
+    float minSc = -1;
+    float maxSc = -0.5;
     vec4 c1 = red;
     vec4 c2 = yellow;
-    if(y > 0.75) {
-        minSc = 0.75;
+    if(y > 0.5) {
+        minSc = 0.5;
         maxSc = 1;
         c1 = cian;
         c2 = blue;
     }
-    else if(y > 0.5) {
-        minSc = 0.5;
-        maxSc = 0.75;
+    else if(y > 0) {
+        minSc = 0;
+        maxSc = 0.5;
         c1 = green;
         c2 = cian;
     }
-    else if(y > 0.25) {
-        minSc = 0.25;
-        maxSc = 0.5;
+    else if(y > -0.5) {
+        minSc = -0.5;
+        maxSc = 0;
         c1 = yellow;
         c2 = green;
     }
