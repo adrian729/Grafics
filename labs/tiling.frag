@@ -5,7 +5,6 @@ out vec4 fragColor;
 
 uniform sampler2D colorMap;
 
-void main()
-{
+void main() {
     fragColor = texture(colorMap, vtexCoord);
 }

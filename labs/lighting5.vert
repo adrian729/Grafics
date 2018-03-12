@@ -13,20 +13,18 @@ uniform vec4 lightPosition;
 
 uniform bool world = true;
 
-void main()
-{
-    vec3 P;
+void main() {
     if(world) {
         N = normal;
-        P = vertex;
-        V = (viewMatrixInverse*vec4(0,0,0,1)).xyz - P;
-        L = (viewMatrixInverse*lightPosition).xyz - P;
+        // P = vertex;
+        V = (viewMatrixInverse*vec4(0,0,0,1)).xyz - vertex;
+        L = (viewMatrixInverse*lightPosition).xyz - vertex;
     }
     else {
         N = normalMatrix*normal;
-        P = (modelViewMatrix*vec4(vertex, 1)).xyz;
+        vec3 P = (modelViewMatrix*vec4(vertex, 1)).xyz;
         V = -P;
         L = lightPosition.xyz - P;
     }
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position = modelViewProjectionMatrix*vec4(vertex, 1.0);
 }

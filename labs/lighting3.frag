@@ -18,7 +18,6 @@ vec4 blinnPhong() {
     + matSpecular*lightSpecular*pow(max(0.0, dot(N, H)), matShininess);
 }
 
-void main()
-{
+void main() {
     fragColor = blinnPhong();
 }

@@ -11,7 +11,7 @@ uniform mat4 modelViewProjectionMatrix;
 uniform vec3 boundingBoxMin, boundingBoxMax;
 
 float scalator(float value, float maxVal, float minVal) {
-    return (value - minVal) / (maxVal - minVal);
+    return (value - minVal)/(maxVal - minVal);
 }
 
 void main() {
@@ -22,31 +22,31 @@ void main() {
     vec4 blue = vec4(0, 0, 1, 1);
 
     vec4 v = modelViewProjectionMatrix*vec4(vertex, 1.0);
-    float y = v.y / v.w;
+    float y = v.y/v.w;
 
     float minSc = -1;
     float maxSc = -0.5;
-    vec4 c1 = red;
-    vec4 c2 = yellow;
+    vec4 color1 = red;
+    vec4 color2 = yellow;
     if(y > 0.5) {
         minSc = 0.5;
         maxSc = 1;
-        c1 = cian;
-        c2 = blue;
+        color1 = cian;
+        color2 = blue;
     }
     else if(y > 0) {
         minSc = 0;
         maxSc = 0.5;
-        c1 = green;
-        c2 = cian;
+        color1 = green;
+        color2 = cian;
     }
     else if(y > -0.5) {
         minSc = -0.5;
         maxSc = 0;
-        c1 = yellow;
-        c2 = green;
+        color1 = yellow;
+        color2 = green;
     }
 
-    frontColor = mix(c1, c2, scalator(y, maxSc, minSc));
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    frontColor = mix(color1, color2, scalator(y, maxSc, minSc));
+    gl_Position = modelViewProjectionMatrix*vec4(vertex, 1.0);
 }

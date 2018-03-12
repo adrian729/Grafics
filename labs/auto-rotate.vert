@@ -9,7 +9,6 @@ out vec4 frontColor;
 out vec2 vtexCoord;
 
 uniform mat4 modelViewProjectionMatrix;
-uniform mat3 normalMatrix;
 
 uniform float time;
 uniform float speed = 0.5;
@@ -18,7 +17,10 @@ void main() {
     frontColor = vec4(color,1.0);
     vtexCoord = texCoord;
     float phi = speed*time;
-    mat3 m = mat3(vec3(cos(phi), 0, -sin(phi)), vec3(0, 1, 0), vec3(sin(phi), 0, cos(phi)));
-    vec3 vrot = m*vertex;
-    gl_Position = modelViewProjectionMatrix * vec4(vrot, 1.0);
+    float s = sin(phi);
+    float c = cos(phi);
+    mat3 mRot = mat3(vec3(c, 0, -s),
+                         vec3(0, 1, 0),
+                         vec3(s, 0, c));
+    gl_Position = modelViewProjectionMatrix*vec4(mRot*vertex, 1.0);
 }

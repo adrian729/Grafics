@@ -3,12 +3,9 @@
 in vec3 N, V, L;
 out vec4 fragColor;
 
-uniform vec4 lightAmbient, lightDiffuse, lightSpecular, lightPosition;
+uniform vec4 lightAmbient, lightDiffuse, lightSpecular;
 uniform vec4 matAmbient, matDiffuse, matSpecular;
 uniform float matShininess;
-
-uniform mat4 modelViewProjectionMatrix, modelViewMatrix;
-uniform mat3 normalMatrix;
 
 vec4 light(vec3 N, vec3 V, vec3 L) {
     N = normalize(N);
@@ -25,7 +22,6 @@ vec4 light(vec3 N, vec3 V, vec3 L) {
         + matSpecular*lightSpecular*Ispec;
 }
 
-void main()
-{
+void main() {
     fragColor = light(N, V, L);
 }

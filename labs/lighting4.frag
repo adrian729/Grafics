@@ -20,7 +20,6 @@ vec4 phong() {
     + matSpecular*lightSpecular*RVS;
 }
 
-void main()
-{
+void main() {
     fragColor = phong();
 }

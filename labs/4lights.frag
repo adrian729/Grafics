@@ -8,7 +8,7 @@ uniform mat4 modelViewMatrixInverse;
 uniform float time;
 uniform bool rotate = true;
 
-vec4 phong(vec3 V, vec3 N, vec3 P, vec3 lightPos, vec3 lightColor){
+vec4 phong(vec3 V, vec3 N, vec3 P, vec3 lightPos, vec3 lightColor) {
 	const float shininess = 100.0;
 	const float Kd = 0.5;
 	vec3 L = normalize(lightPos - P);
@@ -34,9 +34,11 @@ void main() {
     if(rotate){
         float c = cos(time);
         float s = sin(time);
-        mat3 rmatrix = mat3(vec3(c, s, 0),
-                        vec3(-s, c, 0),
-                        vec3(0, 0, 1));
+        mat3 rmatrix = mat3(
+            vec3(c, s, 0),
+            vec3(-s, c, 0),
+            vec3(0, 0, 1)
+        );
         pgreen = rmatrix*pgreen;
         pyellow = rmatrix*pyellow;
         pblue = rmatrix*pblue;

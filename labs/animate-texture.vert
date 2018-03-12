@@ -14,9 +14,8 @@ uniform mat3 normalMatrix;
 uniform float time;
 uniform float speed = 0.1;
 
-void main()
-{
-    frontColor = vec4(normalize(normalMatrix * normal).z);
+void main() {
+    frontColor = vec4(normalize(normalMatrix*normal).z);
     vtexCoord = texCoord + speed*time;
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position = modelViewProjectionMatrix*vec4(vertex, 1.0);
 }

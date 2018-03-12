@@ -7,5 +7,5 @@ out vec4 fragColor;
 uniform mat3 normalMatrix;
 
 void main() {
-    fragColor = frontColor * normalize(normalMatrix * N).z;
+    fragColor = frontColor*normalize(normalMatrix*N).z;
 }

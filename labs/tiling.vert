@@ -8,11 +8,9 @@ layout (location = 3) in vec2 texCoord;
 out vec2 vtexCoord;
 
 uniform mat4 modelViewProjectionMatrix;
-uniform mat3 normalMatrix;
 uniform int tiles = 1;
 
-void main()
-{
+void main() {
     vtexCoord = texCoord*tiles;
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position = modelViewProjectionMatrix*vec4(vertex, 1.0);
 }

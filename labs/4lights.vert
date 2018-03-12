@@ -8,7 +8,6 @@ layout (location = 3) in vec2 texCoord;
 out vec3 P, N;
 
 uniform mat4 modelViewProjectionMatrix;
-uniform mat3 normalMatrix;
 
 void main() {
     N = normal;

@@ -7,11 +7,12 @@ uniform sampler2D sampler0;
 uniform sampler2D sampler1;
 uniform sampler2D sampler2;
 uniform sampler2D sampler3;
+
 uniform float time;
 uniform float slice = 0.1;
 
 void main() {
-    float nsampler = mod(floor(time/0.1), 4);
+    float nsampler = mod(floor(time/slice), 4);
     if(nsampler == 0) {
         fragColor = texture(sampler0, vtexCoord);
     }
@@ -25,5 +26,4 @@ void main() {
         fragColor = texture(sampler3, vtexCoord);
     }
     fragColor *= fragColor.a;
-
 }

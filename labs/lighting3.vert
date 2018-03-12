@@ -10,9 +10,8 @@ out vec3 vnorm, pfrag;
 uniform mat4 modelViewProjectionMatrix, modelViewMatrix;
 uniform mat3 normalMatrix;
 
-void main()
-{
+void main() {
     vnorm = normalMatrix*normal;
     pfrag = (modelViewMatrix*vec4(vertex, 1.0)).xyz;
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position = modelViewProjectionMatrix*vec4(vertex, 1.0);
 }

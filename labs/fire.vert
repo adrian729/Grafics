@@ -9,8 +9,7 @@ out vec2 vtexCoord;
 
 uniform mat4 modelViewProjectionMatrix;
 
-void main()
-{
+void main() {
     vtexCoord = texCoord;
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position = modelViewProjectionMatrix*vec4(vertex, 1.0);
 }

@@ -6,7 +6,6 @@ layout (location = 2) in vec3 color;
 layout (location = 3) in vec2 texCoord;
 
 out vec4 frontColor;
-out vec2 vtexCoord;
 
 uniform mat4 modelViewProjectionMatrix, modelViewMatrix;
 uniform mat3 normalMatrix;
@@ -28,9 +27,7 @@ vec4 phong() {
     + matSpecular*lightSpecular*RVS;
 }
 
-void main()
-{
+void main() {
     frontColor = phong();
-    vtexCoord = texCoord;
     gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
 }
