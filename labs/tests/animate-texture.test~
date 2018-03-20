@@ -4,7 +4,7 @@ noaxes
 clearColor 1 1 1
 preset1
 
-unit0  /assig/grau-g/Textures/grid01.png
+unit0  /assig/grau-g/Textures/grid01.jpg
 loadObject /assig/grau-g/models/glass.obj
 yaw -15
 pitch 10

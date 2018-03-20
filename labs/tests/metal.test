@@ -1,5 +1,5 @@
 resize 800 600
-loadObject /assig/grau-g/models/glass.obj
+loadObject /assig/grau-g/models/fertility.obj
 solid
 noaxes
 clearColor 1 1 1
@@ -15,27 +15,35 @@ lightPositionEye 0 0 0 1
 matAmbient 1.0 0.5 0.3
 matDiffuse 1.0 0.5 0.3
 matSpecular 1.0 1.0 1.0
-matShininess 8.0
+matShininess 64
 
-bool world true
+float f 1
+preset1
+dist 1.4
+grab 1
 grab 1
 
-
-bool world false
+float f 2
+matDiffuse 1.0 0.2 0.1
+grab 2
 grab 2
 
-loadObject /assig/grau-g/models/fertility.obj
-preset1
+float f 2
+loadObject /assig/grau-g/models/armadillo.obj
+yaw 180
 dist 1.5
-matDiffuse 0.5 0.9 0.1
+matDiffuse 1.0 0.2 0.1
+grab 3
 grab 3
 
+float f 2
 loadObject /assig/grau-g/models/boid.obj
 preset1
-yaw 190
-pitch 53
-dist 1
+yaw 200
+pitch 18
+dist 1.1
 matDiffuse 0.2 0.4 1.0
+grab 4
 grab 4
 
 
