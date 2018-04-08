@@ -24,8 +24,6 @@ vec3 eyeToObject(vec3 pos, int point) {
 }
 
 void main() {
-    vec3 V = normalize((modelViewMatrixInverse*vec4(0,0,0,1)).xyz - P);
-
     vec3 pgreen = vec3(0, 10, 0);
     vec3 pyellow = vec3(0, -10, 0);
     vec3 pblue = vec3(10, 0, 0);
@@ -50,6 +48,7 @@ void main() {
     pred = eyeToObject(pred, 1);
 
     vec3 nN = normalize(N);
+    vec3 V = normalize((modelViewMatrixInverse*vec4(0, 0, 0, 1)).xyz - P);
     
     fragColor = phong(V, nN, P, pgreen, vec3(0, 1, 0))
     + phong(V, nN, P, pyellow, vec3(1, 1, 0))

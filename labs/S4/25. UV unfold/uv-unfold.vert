@@ -7,6 +7,9 @@ layout (location = 3) in vec2 texCoord;
 
 out vec4 frontColor;
 
+uniform vec2 Min = vec2(-1, -1);
+uniform vec2 Max = vec2(1, 1);
+
 float scalator(float value, float maxVal, float minVal) {
     return (value - minVal)/(maxVal - minVal);
 }

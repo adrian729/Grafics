@@ -2,8 +2,6 @@
 
 layout (location = 0) in vec3 vertex;
 layout (location = 1) in vec3 normal;
-layout (location = 2) in vec3 color;
-layout (location = 3) in vec2 texCoord;
 
 out vec4 frontColor;
 
@@ -17,7 +15,7 @@ uniform float matShininess;
 vec4 phong() {
   vec3 N = normalize(normalMatrix*normal);
   vec3 P = (modelViewMatrix*vec4(vertex, 1.0)).xyz;
-  vec3 V = normalize(-P);
+  vec3 V = normalize(-P); // obs a (0, 0, 0)
   vec3 L = normalize(lightPosition.xyz - P);
   float dotNL = max(0.0, dot(N, L));
   vec3 R = 2.0*dotNL*N - L;
@@ -29,5 +27,5 @@ vec4 phong() {
 
 void main() {
     frontColor = phong();
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position = modelViewProjectionMatrix*vec4(vertex, 1.0);
 }

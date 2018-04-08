@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm ./*.png
-rm ./*/*.png
+find . -type f -name '*.png' -exec rm {} +
+

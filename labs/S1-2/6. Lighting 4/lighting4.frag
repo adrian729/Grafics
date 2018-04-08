@@ -10,7 +10,7 @@ uniform float matShininess;
 vec4 phong() {
   vec3 N = normalize(vnorm);
   vec3 P = pfrag;
-  vec3 V = normalize(-P);
+  vec3 V = normalize(-P); // obs a (0, 0, 0)
   vec3 L = normalize(lightPosition.xyz - P);
   float dotNL = max(0.0, dot(N, L));
   vec3 R = 2.0*dotNL*N - L;
