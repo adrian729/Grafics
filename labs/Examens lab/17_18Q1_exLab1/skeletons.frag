@@ -3,10 +3,8 @@
 in vec2 vtexCoord;
 out vec4 fragColor;
 
-uniform sampler2D skeletons;
+uniform sampler2D skeleton;
 
-void main()
-{
-	vec4 color = texture(skeletons, vtexCoord);
-    fragColor = vec4(1. - color.r, 1. - color.g, 1. - color.b, color.a);
+void main() {
+    fragColor = vec4(1) - texture(skeleton, vtexCoord);
 }
