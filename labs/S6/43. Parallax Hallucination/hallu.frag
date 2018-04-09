@@ -21,6 +21,6 @@ void main() {
         vec2(c, s),
         vec2(-s, c)
     );
-    vec2 offset = (a/100.0)*rot*vec2(m, m);
+    vec2 offset = (a/100.0)*rot*vec2(m);
     fragColor = texture(map, vtexCoord + offset);
 }

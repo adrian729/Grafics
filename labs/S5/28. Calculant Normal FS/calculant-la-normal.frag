@@ -5,5 +5,5 @@ in vec3 vtex;
 out vec4 fragColor;
 
 void main() {
-    fragColor = frontColor*(normalize(cross(dFdx(vtex), dFdy(vtex)))).z;
+    fragColor = frontColor*normalize(cross(dFdx(vtex), dFdy(vtex))).z;
 }

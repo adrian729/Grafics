@@ -28,5 +28,5 @@ void main() {
     vec4 white = vec4(1);
     vec4 redish = vec4(0.5, 0.2, 0.2, 1);
     vec4 diffuse = v < 0.5 ? mix(white, redish, 2*v) : mix(redish, white, 2*(v - 0.5));
-    fragColor = shading(norm, (modelViewMatrix*vert).xyz, diffuse);
+    fragColor = shading(normalize(norm), (modelViewMatrix*vert).xyz, diffuse);
 }
